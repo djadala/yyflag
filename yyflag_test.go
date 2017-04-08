@@ -6,38 +6,7 @@ import (
 	"time"
 )
 
-////////////////
-
 var now = time.Date(2013, time.June, 10, 23, 1, 2, 3, time.UTC)
-
-// func ExampleStr2date() {
-// 	t, err := Str2dateS("12-34-56.789 098 765", "hh-mm-ss.fff fff fff", time.Time{})
-// 	fmt.Println(t, err)
-//
-// 	t, err = Str2dateS("01 12-55-13.14", "DD hh-mm-ss.ff", now)
-// 	fmt.Println(t, err)
-//
-// 	t, err = Str2dateS("02 29 12-55-13.14", "MM DD hh-mm-ss.ff", now)
-// 	fmt.Println(t, err)
-//
-// 	t, err = Str2dateS("2008 366 12-55-13.14", "YYYY DDD hh-mm-ss.ff", now)
-// 	fmt.Println(t, err)
-//
-// 	t, err = Str2dateS("8 02 29 12-55-13.14", "Y MM DD hh-mm-ss.ff", now)
-// 	fmt.Println(t, err)
-//
-// 	t, err = Str2dateS("720 02 29 12-55-13.14", "YYY MM DD hh-mm-ss.ff", now)
-// 	fmt.Println(t, err)
-//
-// 	//Output:
-// 	//0001-01-01 12:34:56.789098765 +0000 UTC <nil>
-// 	//2013-06-01 12:55:13.14 +0000 UTC <nil>
-// 	//2012-02-29 12:55:13.14 +0000 UTC <nil>
-// 	//2008-12-31 12:55:13.14 +0000 UTC <nil>
-// 	//2008-02-29 12:55:13.14 +0000 UTC <nil>
-// 	//1720-02-29 12:55:13.14 +0000 UTC <nil>
-//
-// }
 
 const tf = `2006-01-02 15:04:05.999999999 -0700 MST`
 

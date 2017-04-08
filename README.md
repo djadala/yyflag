@@ -37,7 +37,7 @@ yyflag recognize following formats:
 -  hh:mm:ss
 -  hh:mm:ss.d+
 
-- 'timezone' is one of:
+ 'timezone' is one of:
 -  +/-hh:mm
 -  +/-hhmm
 -  timezoneName

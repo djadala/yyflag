@@ -44,3 +44,32 @@ yyflag recognize following formats:
 -  z                  UTC
 -  l                  Local
 
+ [![GoDoc](https://godoc.org/github.com/djadala/yyflag?status.svg)](https://godoc.org/github.com/djadala/yyflag)
+
+example:
+```go
+package main
+
+import (
+	"flag"
+	"fmt"
+	"time"
+
+	"github.com/djadala/yyflag"
+)
+
+func main() {
+	deft := time.Now().UTC().Truncate(24 * time.Hour)
+
+	from := yyflag.New(deft)
+	to := yyflag.New(deft.AddDate(0, 0, 1))
+
+	flag.Var(&from, "f", "from date")
+	flag.Var(&to, "t", "to date")
+
+	flag.Parse()
+
+	fmt.Println(from.Time())
+	fmt.Println(to.Time())
+}
+```

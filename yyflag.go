@@ -60,12 +60,12 @@ type dt struct {
 	tt time.Time
 }
 
-// return new flag.Getter for time.Time, with default time t
+// New return new flag.Getter for time.Time, with default time t
 func New(t time.Time) dt {
 	return dt{tt: t}
 }
 
-// return time.Time value
+// Time return time.Time value
 func (d *dt) Time() time.Time {
 	return d.tt
 }
@@ -75,7 +75,7 @@ func (d *dt) String() string {
 	return d.tt.String()
 }
 
-// implement flag.Value interface
+// Set implement flag.Value interface
 func (d *dt) Set(v string) error {
 	result := reAll.FindSubmatch([]byte(v))
 	if len(result) == 0 {
@@ -168,7 +168,7 @@ func (d *dt) Set(v string) error {
 	return e
 }
 
-// implement flag.Getter interface
+// Get implement flag.Getter interface
 func (d *dt) Get() interface{} {
 	return d.tt
 }

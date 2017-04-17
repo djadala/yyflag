@@ -171,7 +171,7 @@ var ta = []testData{
 func Test_01(t *testing.T) {
 
 	var (
-		fld dt
+		fld DT
 		n   time.Time
 	)
 

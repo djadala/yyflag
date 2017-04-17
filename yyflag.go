@@ -56,27 +56,28 @@ import (
 
 var reAll = regexp.MustCompile(reStr)
 
-type dt struct {
+// type DT implement flag.Getter interface
+type DT struct {
 	tt time.Time
 }
 
 // New return new flag.Getter for time.Time, with default time t
-func New(t time.Time) dt {
-	return dt{tt: t}
+func New(t time.Time) DT {
+	return DT{tt: t}
 }
 
 // Time return time.Time value
-func (d *dt) Time() time.Time {
+func (d *DT) Time() time.Time {
 	return d.tt
 }
 
 // implement flag.Value interface
-func (d *dt) String() string {
+func (d *DT) String() string {
 	return d.tt.String()
 }
 
 // Set implement flag.Value interface
-func (d *dt) Set(v string) error {
+func (d *DT) Set(v string) error {
 	result := reAll.FindSubmatch([]byte(v))
 	if len(result) == 0 {
 		return fmt.Errorf("invalid date format %s", v)
@@ -169,7 +170,7 @@ func (d *dt) Set(v string) error {
 }
 
 // Get implement flag.Getter interface
-func (d *dt) Get() interface{} {
+func (d *DT) Get() interface{} {
 	return d.tt
 }
 

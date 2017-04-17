@@ -56,7 +56,7 @@ import (
 
 var reAll = regexp.MustCompile(reStr)
 
-// type DT implement flag.Getter interface
+// DT implement flag.Getter interface
 type DT struct {
 	tt time.Time
 }

@@ -61,7 +61,8 @@ type DT struct {
 	tt time.Time
 }
 
-// New return new flag.Getter for time.Time, with default time t
+// New return new flag.Getter for time.Time, with default time t.
+// Time t act as reference time when resolving incomplete dates
 func New(t time.Time) DT {
 	return DT{tt: t}
 }
